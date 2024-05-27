@@ -1,12 +1,12 @@
 CC=gcc
-CFLAGS = -I
+CFLAGS = -I.
 DEPS = main.h
 
 all: main.o
-	$(CC) -o shell -Wall -Wextra -pedantic main.c 
+	$(CC) -o kshell -Wall -Wextra -pedantic main.c file_loc.c
 
-# %.o: %.c $(DEPS)
-# 	$(CC) -c -o $@ $< $(CFLAGS)
+%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
 
 clean:
-	rm -rf shell main.o
+	rm -rf kshell main.o
